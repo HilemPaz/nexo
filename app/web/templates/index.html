@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo - Descubra a Palavra Secreta</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧩</div>
+                <div>
+                    <h1>NEXO</h1>
+                    <p class="inspired-note">Descubra a palavra secreta</p>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Modo Escuro</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <main class="game-main">
+                <div class="game-card">
+                    <div id="counter" class="game-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-hashtag"></i>
+                            <span>JOGO <span id="game-id">#</span></span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-repeat"></i>
+                            <span>TENTATIVAS: <span id="attempts">0</span></span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>DICAS: <span id="hints">0</span></span>
+                        </div>
+                    </div>
+                    <!-- Área de entrada -->
+                    <div class="input-area">
+                        <form id="guess-form">
+                            <div class="input-group">
+                                <input type="text" id="guess-input" placeholder="Digite uma palavra..."
+                                    autocomplete="off" required />
+                                <button type="submit" class="submit-btn" id="submitBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    ENVIAR
+                                </button>
+                            </div>
+                        </form>
+
+                        <p id="feedback" class="feedback"></p>
+                    </div>
+
+                    <!-- Barra de progresso -->
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Distância da palavra secreta</span>
+                            <span id="progress-text">0% mais próximo</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Destaque da última tentativa -->
+                    <div id="last-guess-highlight" class="highlight-area"></div>
+
+                    <!-- Histórico de tentativas -->
+                    <div class="attempts-history">
+                        <h3 class="attempts-title">
+                            <i class="fas fa-history"></i> Histórico de Tentativas
+                        </h3>
+                        <ul id="guess-list" class="attempt-list"></ul>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <!-- Ações do jogo -->
+                <div class="actions-card">
+                    <h3 class="card-title"><i class="fas fa-gamepad"></i> Ações</h3>
+                    <div class="actions-buttons">
+                        <button id="hint-btn" type="button" class="action-btn hint-btn">
+                            <i class="fas fa-lightbulb"></i>
+                            USAR DICA
+                        </button>
+                        <button id="give-up-btn" type="button" class="action-btn give-up-btn">
+                            <i class="fas fa-flag"></i>
+                            DESISTIR
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dicas disponíveis -->
+                <div class="hints-card">
+                    <h3 class="card-title"><i class="fas fa-key"></i> Dicas utilizadas</h3>
+                    <div class="hints-available">
+                        <div>
+                            <div class="hint-count" id="hint-count">0</div>
+                            <div class="hint-text">número de dicas</div>
+                        </div>
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="hint-example">
+                        <strong>Como funciona:</strong>
+                        <p>Cada dica revela uma pista sobre a palavra secreta, mas consome uma tentativa extra.</p>
+                    </div>
+                </div>
+
+                <!-- Como jogar -->
+                <div class="info-card">
+                    <h3 class="card-title"><i class="fas fa-info-circle"></i> Como Jogar</h3>
+                    <div class="info-content">
+                        <div class="info-item">
+                            <div class="info-icon">🎯</div>
+                            <div>
+                                <strong>Objetivo:</strong> Descubra a palavra secreta
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🔢</div>
+                            <div>
+                                <strong>Número:</strong> Indica a "distância" da palavra secreta
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">💡</div>
+                            <div>
+                                <strong>Dicas:</strong> Use para obter informações extras
+                            </div>
+                        </div>
+
+                        <div class="distance-scale">
+                            <div class="scale-item correct">
+                                <div class="scale-color"></div>
+                                <div><strong>1</strong> - Acertou!</div>
+                            </div>
+                            <div class="scale-item near">
+                                <div class="scale-color"></div>
+                                <div><strong>2-200</strong> - Muito perto</div>
+                            </div>
+                            <div class="scale-item medium">
+                                <div class="scale-color"></div>
+                                <div><strong>201-1000</strong> - Perto</div>
+                            </div>
+                            <div class="scale-item far">
+                                <div class="scale-color"></div>
+                                <div><strong>1001+</strong> - Longe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Área de resultado (inicialmente escondida) -->
+        <section id="result-area" class="hidden result-card">
+            <h2 id="result-title">🎉 Você acertou!</h2>
+
+            <div class="result-content">
+                <p class="subtitle">
+                    Palavra correta: <strong id="final-word"></strong>
+                </p>
+                <p>Tentativas: <strong id="final-attempts">0</strong></p>
+
+                <div id="summary" class="summary">
+                    <h3><i class="fas fa-chart-bar"></i> Resumo</h3>
+                    <ul>
+                        <li class="summary-win">🟩 Palavra certa <strong id="sum-win">0</strong></li>
+                        <li class="summary-near">🔴 Muito perto <strong id="sum-near">0</strong></li>
+                        <li class="summary-mid">🟠 Perto <strong id="sum-mid">0</strong></li>
+                        <li class="summary-far">🔵 Longe <strong id="sum-far">0</strong></li>
+                    </ul>
+                </div>
+
+                <div class="result-actions">
+                    <button id="show-audit" class="result-btn audit-btn">
+                        <i class="fas fa-search"></i> Ver conexões
+                    </button>
+                    <button id="newGameBtn" class="result-btn new-game-btn">
+                        <i class="fas fa-redo"></i> Nova rodada
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="inspired-by">Jogo inspirado no conceito do <a href="https://contexto.me/pt/" target="_blank"
+                    rel="noopener">Contexto.me</a></p>
+
+            <div class="footer-links">
+                <a href="#privacy-policy" class="footer-link privacy-link" id="privacyLink">
+                    <i class="fas fa-shield-alt"></i> Política de Privacidade
+                </a>
+                <a href="#feedback" class="footer-link feedback-link" id="feedbackLink">
+                    <i class="fas fa-comment-alt"></i> Feedback
+                </a>
+                <a href="#support" class="footer-link donation-link" id="donationLink">
+                    <i class="fas fa-heart"></i> Apoiar o Desenvolvedor
+                </a>
+            </div>
+
+            <p class="copyright">© 2026 Nexo - Todos os direitos reservados</p>
+        </footer>
+
+    </div>
+
+    <!-- MODAL: Conexões mais próximas -->
+    <div id="connections-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-project-diagram"></i> Conexões mais próximas</h2>
+                <span id="close-modal" class="modal-close">✖</span>
+            </div>
+            <ul id="connections-list" class="connections-list"></ul>
+        </div>
+    </div>
+
+    <!-- MODAL: Desistir da partida -->
+    <div id="give-up-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-flag"></i> Desistir da partida</h2>
+                <span id="close-give-up-modal" class="modal-close">✖</span>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-text">
+                    Tem certeza que deseja desistir?<br>
+                    A palavra correta será revelada.
+                </p>
+
+                <div class="modal-actions">
+                    <button id="confirm-give-up" class="modal-btn give-up-btn">
+                        <i class="fas fa-check"></i> Confirmar desistência
+                    </button>
+                    <button id="cancel-give-up" class="modal-btn cancel-btn">
+                        <i class="fas fa-times"></i> Voltar ao jogo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Política de Privacidade -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content privacy-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Política de Privacidade</h2>
+                <span class="modal-close" id="close-privacy-modal">✖</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="privacy-content">
+                    <div class="privacy-section">
+                        <h3><i class="fas fa-info-circle"></i> Coleta de Informações</h3>
+                        <p>O <strong>Nexo</strong> respeita sua privacidade. Coletamos apenas:</p>
+                        <ul>
+                            <li>Palavras digitadas durante o jogo (processadas localmente)</li>
+                            <li>Estatísticas de jogo (tentativas, acertos, etc.)</li>
+                            <li>Preferências de tema (claro/escuro)</li>
+                        </ul>
+                        <p><strong>Não coletamos:</strong> Dados pessoais, e-mail, nome, localização ou qualquer
+                            informação identificável.</p>
+                    </div>
+
+                    <div class="privacy-section">
+                        <h3><i class="fas fa-database"></i> Armazenamento de Dados</h3>
+                        <p>Todos os dados são armazenados localmente no seu navegador através do
+                            <code>localStorage</code>. Nenhuma informação é enviada para servidores externos, exceto:
+                        </p>
+                        <ul>
+                            <li>Requisições para processamento de palavras (anonimizadas)</li>
+                            <li>Estatísticas agregadas (sem identificação pessoal)</li>
+                        </ul>
+                    </div>
+
+                    <div class="privacy-section">
+                        <h3><i class="fas fa-cookie"></i> Cookies</h3>
+                        <p>Utilizamos apenas cookies técnicos essenciais para:</p>
+                        <ul>
+                            <li>Salvar preferências de tema</li>
+                            <li>Manter estatísticas do jogo atual</li>
+                            <li>Lembrar configurações de acessibilidade</li>
+                        </ul>
+                        <p>Não utilizamos cookies de terceiros ou de rastreamento.</p>
+                    </div>
+
+                    <div class="privacy-section">
+                        <h3><i class="fas fa-lock"></i> Segurança</h3>
+                        <p>Implementamos medidas de segurança para proteger suas informações:</p>
+                        <ul>
+                            <li>HTTPS em todas as comunicações</li>
+                            <li>Dados criptografados em trânsito</li>
+                            <li>Armazenamento local seguro</li>
+                        </ul>
+                    </div>
+
+                    <div class="privacy-section">
+                        <h3><i class="fas fa-user-check"></i> Seus Direitos</h3>
+                        <p>Você tem o direito de:</p>
+                        <ul>
+                            <li>Excluir todos os dados locais (limpar cache do navegador)</li>
+                            <li>Optar por não compartilhar estatísticas anônimas</li>
+                            <li>Solicitar informações sobre dados processados</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Feedback -->
+    <div id="feedback-modal" class="modal">
+    <div class="modal-content feedback-modal">
+        <div class="modal-header">
+            <h2><i class="fas fa-comment-alt"></i> Feedback</h2>
+            <span class="modal-close" id="close-feedback-modal">✖</span>
+        </div>
+
+        <div class="modal-body">
+            <div class="feedback-intro">
+                <p><strong>O que você está achando do jogo?</strong></p>
+                <p>Sua opinião é muito importante para melhorar o Nexo!</p>
+            </div>
+
+            <div class="feedback-options">
+                <div class="feedback-question">
+                    <h3><i class="fas fa-smile"></i> Como está sua experiência?</h3>
+                    <div class="emoji-options">
+                        <button class="emoji-option" data-rating="1">😞</button>
+                        <button class="emoji-option" data-rating="2">😐</button>
+                        <button class="emoji-option" data-rating="3">🙂</button>
+                        <button class="emoji-option" data-rating="4">😊</button>
+                        <button class="emoji-option" data-rating="5">🤩</button>
+                    </div>
+                    <!-- Adicionei este label para mostrar a avaliação -->
+                    <p class="rating-label" id="rating-label"></p>
+                </div>
+            </div>
+
+            <div class="google-form-section">
+                <h3><i class="fab fa-google"></i> Enviar Feedback</h3>
+                <p>Para enviar seu feedback detalhado, clique no botão abaixo para abrir o formulário do Google:</p>
+                <a href="https://forms.google.com/SEU_LINK_AQUI" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="google-form-btn" 
+                   id="open-google-form">
+                    <i class="fab fa-google"></i> Enviar Feedback
+                </a>
+
+                <p class="form-note">
+                    <i class="fas fa-info-circle"></i> O formulário abrirá em uma nova aba.
+                </p>
+            </div>
+
+            <div class="thank-you-feedback">
+                <p><strong>Muito obrigado pelo seu feedback!</strong></p>
+                <p>Cada opinião ajuda a tornar o jogo melhor para todos.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal: Apoiar o Desenvolvedor -->
+    <div id="donation-modal" class="modal">
+        <div class="modal-content donation-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-heart"></i> Apoiar o Desenvolvedor</h2>
+                <span class="modal-close" id="close-donation-modal">✖</span>
+            </div>
+
+            <div class="modal-body">
+                <!-- Mensagem Inicial -->
+                <div class="donation-message">
+                    <p>O <strong>Nexo</strong> é mantido com ❤️ por um desenvolvedor independente.
+                        Sua contribuição ajuda a continuar desenvolvendo jogos gratuitos e sem anúncios.</p>
+                </div>
+
+                <!-- Imagem de Doação -->
+                <div class="donation-image-section">
+                    <h3><i class="fas fa-gift"></i> Faça uma Doação</h3>
+                    <div class="donation-image-container">
+                        <img src="/static/images/donation-image.png" alt="Apoie o desenvolvedor do Nexo"
+                            class="donation-image donation-image-fixed"> 
+                        <div class="image-fallback">
+                            <i class="fas fa-heart"></i>
+                            <p>Imagem de Apoio</p>
+                        </div>
+                    </div>
+                    <p class="donation-instruction">Sua contribuição é muito valiosa!</p>
+                </div>
+
+                <!-- Informações de apoio alternativo -->
+                <div class="alternative-support">
+                    <h3><i class="fas fa-handshake"></i> Outras Formas de Apoio</h3>
+                    <p>Se preferir, você também pode apoiar:</p>
+                    <ul class="alternative-options">
+                        <li><i class="fas fa-share-alt"></i> <strong>Compartilhando</strong> o jogo com amigos</li>
+                        <li><i class="fas fa-star"></i> <strong>Avaliando</strong> positivamente o projeto</li>
+                        <li><i class="fas fa-code"></i> <strong>Contribuindo</strong> com sugestões de melhorias</li>
+                    </ul>
+                </div>
+
+                <!-- Agradecimento -->
+                <div class="thank-you">
+                    <div class="heart-icon">💖</div>
+                    <p class="thank-you-message">
+                        <strong>Muito obrigado pelo seu apoio!</strong><br>
+                        Cada contribuição faz diferença e me motiva a continuar criando.
+                    </p>
+                    <p class="signature">— Desenvolvedor do Nexo</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-btn close-btn" id="close-donation">
+                    <i class="fas fa-times"></i> Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js?v=1"></script>
+</body>
+
+</html>

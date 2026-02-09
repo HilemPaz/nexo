@@ -1,0 +1,10 @@
+services:
+  nexo_dev:
+    build: .
+    container_name: nexo_dev
+    ports:
+      - "8000:8080"
+    volumes:
+      - ./app/models:/models
+    environment:
+      - FASTTEXT_MODEL=/models/cc.pt.300.bin
