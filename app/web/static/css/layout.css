@@ -1,0 +1,19 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+     margin-bottom: 40px;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

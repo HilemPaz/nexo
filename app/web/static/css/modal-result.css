@@ -1,0 +1,128 @@
+#result-modal .modal-content {
+    max-width: 600px;
+}
+
+#result-area {
+    z-index: 1000;
+} 
+
+.result-content {
+    text-align: center;
+}
+
+.result-content .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.result-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.result-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 30px var(--shadow);
+    border: 1px solid var(--border);
+}
+
+
+.summary {
+    margin: 25px auto;
+    padding: 20px;
+    background: var(--background);
+    border-radius: 12px;
+    max-width: 400px;
+}
+
+.summary h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.summary-win { 
+    background: #d1fae5;
+     color: #22c55e;
+     }
+
+.summary-near {
+    background: #fee2e2;
+     color: #ff3b30;
+    }
+
+.summary-mid { 
+    background: #ffedd5;
+     color: #ff9500;
+     }
+
+.summary-far {
+    background: #dbeafe;
+     color: #5ac8fa;
+     }
+
+.summary-very-far {
+     background: #dbeafe;
+      color: #3478f6;
+     }
+
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-group {
+    display: ruby;
+    gap: 10px; 
+}
+
+.result-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.audit-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.new-game-btn {
+    background: linear-gradient(135deg, var(--success), #06d6a0);
+    color: white;
+}

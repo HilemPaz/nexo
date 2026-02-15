@@ -1,84 +1,137 @@
 // modals.js
+
+let activeModal = null;
+
+// =========================
+// HELPERS (GERENCIADOR)
+// =========================
+
+export function openModal(modal) {
+
+    if (!modal) return;
+
+    // fecha modal anterior
+    if (activeModal && activeModal !== modal) {
+        activeModal.classList.remove("visible");
+    }
+
+    modal.classList.add("visible");
+    document.body.style.overflow = "hidden";
+    activeModal = modal;
+}
+
+export function closeModal(modal, force = false) {
+
+    if (!modal) return;
+
+   if (!force && modal.classList.contains("locked-modal")) {
+        return;
+    }
+
+    modal.classList.remove("visible");
+
+    if (activeModal === modal) {
+        activeModal = null;
+    }
+}
+
+export function initConnectionsAccordion(toggle, panel) {
+
+    if (!toggle || !panel) return;
+
+    toggle.addEventListener("click", () => {
+
+        const isOpen = panel.classList.toggle("open");
+
+        toggle.setAttribute("aria-expanded", isOpen);
+
+        toggle.innerHTML = isOpen
+            ? '<i class="fas fa-chevron-up"></i> Ocultar conexões'
+            : '<i class="fas fa-search"></i> Ver conexões';
+    });
+}
+
 export function initModals(selectors = {}) {
+
     const {
-        // Modais existentes
         feedbackLink, feedbackModal, closeFeedbackModal, closeFeedbackBtn,
         donationLink, donationModal, closeDonationModal, closeDonationBtn,
         privacyLink, privacyModal, closePrivacyModal, acceptPrivacyBtn,
         giveUpBtn, giveUpModal, closeGiveUpModal, confirmGiveUp, cancelGiveUp,
-        showAuditBtn, connectionsModal, closeModal
+        connectionsModal, closeModal: closeConnectionsModal,
+        resultModal, closeResultModal
     } = selectors;
 
     // ------------------ FEEDBACK ------------------
     if (feedbackLink && feedbackModal) {
         feedbackLink.addEventListener("click", (e) => {
             e.preventDefault();
-            feedbackModal.style.display = "flex";
+            openModal(feedbackModal);
         });
     }
-    if (closeFeedbackModal) closeFeedbackModal.addEventListener("click", () => { feedbackModal.style.display = "none"; });
-    if (closeFeedbackBtn) closeFeedbackBtn.addEventListener("click", () => { feedbackModal.style.display = "none"; });
+
+    closeFeedbackModal?.addEventListener("click", () => closeModal(feedbackModal));
+    closeFeedbackBtn?.addEventListener("click", () => closeModal(feedbackModal));
+
 
     // ------------------ DONATION ------------------
     if (donationLink && donationModal) {
         donationLink.addEventListener("click", (e) => {
             e.preventDefault();
-            donationModal.style.display = "flex";
+            openModal(donationModal);
         });
     }
-    if (closeDonationModal) closeDonationModal.addEventListener("click", () => { donationModal.style.display = "none"; });
-    if (closeDonationBtn) closeDonationBtn.addEventListener("click", () => { donationModal.style.display = "none"; });
+
+    closeDonationModal?.addEventListener("click", () => closeModal(donationModal));
+    closeDonationBtn?.addEventListener("click", () => closeModal(donationModal));
+
 
     // ------------------ PRIVACY ------------------
     if (privacyLink && privacyModal) {
         privacyLink.addEventListener("click", (e) => {
             e.preventDefault();
-            privacyModal.style.display = "flex";
+            openModal(privacyModal);
         });
     }
-    if (closePrivacyModal) closePrivacyModal.addEventListener("click", () => { privacyModal.style.display = "none"; });
-    if (acceptPrivacyBtn) acceptPrivacyBtn.addEventListener("click", () => {
-        privacyModal.style.display = "none";
+
+    closePrivacyModal?.addEventListener("click", () => closeModal(privacyModal));
+
+    acceptPrivacyBtn?.addEventListener("click", () => {
+
         localStorage.setItem('privacyAccepted', 'true');
+        closeModal(privacyModal);
     });
+
 
     // ------------------ DESISTIR ------------------
     if (giveUpBtn && giveUpModal) {
         giveUpBtn.addEventListener("click", () => {
-            giveUpModal.classList.add("visible");
+            openModal(giveUpModal);
         });
     }
-    if (closeGiveUpModal) closeGiveUpModal.addEventListener("click", () => {
-        giveUpModal.classList.remove("visible");
-    });
-    if (cancelGiveUp) cancelGiveUp.addEventListener("click", () => {
-        giveUpModal.classList.remove("visible");
-    });
-    if (confirmGiveUp) confirmGiveUp.addEventListener("click", async () => {
-        giveUpModal.classList.remove("visible");
-        // Solicita a palavra secreta ao servidor
-        const res = await fetch("/give-up", { method: "POST" });
-        const result = await res.json();
-        // Mostra resultado usando UI existente
-        selectors.ui.showResult(
-            selectors.resultArea,
-            selectors.finalWordEl,
-            selectors.finalAttemptsEl,
-            0,
-            false,
-            result.secret_word
+
+    closeGiveUpModal?.addEventListener("click", () => closeModal(giveUpModal));
+
+    cancelGiveUp?.addEventListener("click", () => closeModal(giveUpModal));
+
+    confirmGiveUp?.addEventListener("click", () => {
+
+        closeModal(giveUpModal);
+
+        document.dispatchEvent(
+            new CustomEvent("playerGiveUp")
         );
     });
 
-    // ------------------ CONEXÕES ------------------
-    if (showAuditBtn && connectionsModal) {
-        showAuditBtn.addEventListener("click", () => {
-            connectionsModal.classList.add("visible");
-            // Aqui você pode preencher a lista de conexões se quiser
-            // selectors.connectionsList.innerHTML = generateConnectionsHTML();
-        });
-    }
-    if (closeModal) closeModal.addEventListener("click", () => {
-        connectionsModal.classList.remove("visible");
+    closeConnectionsModal?.addEventListener("click", () => {
+        closeModal(connectionsModal);
     });
+
+    // ------------------ RESULTADO ------------------
+
+    closeResultModal?.addEventListener("click", () => {
+        closeModal(resultModal);
+    });
+
+
 }

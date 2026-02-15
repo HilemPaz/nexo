@@ -1,0 +1,175 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ===== CARTÃO DE AÇÕES ===== */
+.actions-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 30px var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.actions-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-btn {
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hint-btn {
+    background: linear-gradient(135deg, var(--success), #06d6a0);
+    color: white;
+}
+
+.give-up-btn {
+    background: linear-gradient(135deg, var(--danger), #e63946);
+    color: white;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow);
+}
+
+/* ==== CARTÃO RANKING ==== */
+.ranking-card {
+    margin-top: 16px;
+    padding: 12px;
+    background: var(--card);
+    box-shadow: 0 2px 6px var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.ranking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-list li {
+    padding: 6px 8px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ranking-list li:last-child {
+    border-bottom: none;
+}
+
+/* ===== CARTÃO DE DICAS ===== */
+.hints-card, .info-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 30px var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hints-available {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--background);
+    border-radius: 10px;
+}
+
+.hint-count {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.hint-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.hints-available i {
+    font-size: 3rem;
+    color: var(--success);
+    opacity: 0.7;
+}
+
+.hint-example {
+    background: var(--background);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--success);
+    font-size: 0.9rem;
+}
+
+/* ===== INFORMAÇÕES DO JOGO ===== */
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    width: 40px;
+}
+
+.distance-scale {
+    margin-top: 20px;
+}
+
+.scale-item {
+    display: flex !important;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: var(--background);
+}
+
+.scale-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.scale-item.correct .scale-color { background-color: var(--correct); }
+.scale-item.near .scale-color { background-color: var(--near); }
+.scale-item.medium .scale-color { background-color: var(--medium); }
+.scale-item.far .scale-color { background-color: var(--far); }
+.scale-item.very-far .scale-color { background-color: var(--very-far); }

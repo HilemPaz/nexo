@@ -1,0 +1,90 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.inspired-note {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.logo-icon {
+    font-size: 2.8rem;
+}
+
+.header-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 6px;
+}
+.mode-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    background: #f3f4f6; /* cinza claro */
+    font-weight: 600;
+}
+
+/* hover */
+.mode-btn:hover {
+    background: #e5e7eb;
+}
+
+/* botão selecionado */
+.mode-btn[data-active="true"] {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* ===== TOGGLE DE TEMA ===== */
+.theme-toggle {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-weight: 600;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+}

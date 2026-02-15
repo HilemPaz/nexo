@@ -1,0 +1,259 @@
+.game-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 30px var(--shadow);
+    border: 1px solid var(--border);
+    flex: 1;
+}
+
+.game-stats {
+    display: flex;
+    gap: 25px;
+    background: var(--card);
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.stat-item i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* indicador diário */
+.daily-indicator {
+    margin-top: 5px 0px;
+    padding: 6px;
+    background: #fef3c7;
+    color: #92400e;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ===== ÁREA DE ENTRADA ===== */
+.input-area {
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#guess-input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--text);
+    transition: border-color 0.3s;
+}
+
+#guess-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(67, 97, 238, 0.3);
+}
+
+/* ===== FEEDBACK ===== */
+.feedback {
+    height: 20px;
+    font-size: 14px;
+    color: var(--danger);
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-bottom: 15px;
+}
+
+.feedback.visible {
+    opacity: 1;
+}
+
+.feedback.error {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+/* ===== BARRA DE PROGRESSO ===== */
+.progress-container {
+    margin: 25px 0;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--near), var(--medium), var(--far));
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+/* ===== DESTAQUE DA ÚLTIMA TENTATIVA ===== */
+.highlight-area{
+    margin: 20px 0;
+    padding: 2px;
+    background: var(--background);
+    border-radius: 12px;
+}
+
+#last-guess-highlight li {
+   display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 6px 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    animation: slideIn 0.25s ease-out;
+    gap: 5px;
+    border: 2px solid var(--border);
+}
+#last-guess-highlight li span:first-child {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+#last-guess-highlight li span:last-child {
+    font-size: 1.5rem;
+    font-weight: 900;
+    min-width: 80px;
+    text-align: right;
+    padding-left: 15px;
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ===== HISTÓRICO DE TENTATIVAS ===== */
+.attempts-history {
+    margin-top: 30px;
+}
+
+.attempts-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.attempt-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ===== NOVO ESQUEMA DE CORES ===== */
+#guess-list li {
+  display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 4px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    min-height: 10px;
+    animation: slideIn 0.25s ease-out;
+    gap: 15px;
+}
+
+#guess-list li span:first-child {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-align: left;
+    min-width: 0;
+}
+
+#guess-list li span:last-child {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-align: right;
+    min-width: 80px;
+    padding-left: 10px;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.correct {
+    background-color: var(--correct) !important;
+    color: white;
+    border-left: 4px solid #16a34a;
+}
+
+.near {
+    background-color: var(--near) !important;
+    color: white;
+    border-left: 4px solid #c53030;
+}
+
+.medium {
+    background-color: var(--medium) !important;
+    color: white;
+    border-left: 4px solid #d97706;
+}
+
+.far {
+    background-color: var(--far) !important;
+    color: white;
+    border-left: 4px solid #4169d9;
+}
+.very-far {
+    background-color: var(--very-far) !important;
+    color: white;
+    border-left: 4px solid #092b8b;
+}

@@ -1,0 +1,130 @@
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.inspired-by {
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.inspired-by a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.inspired-by a:hover {
+    color: white;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+.inspired-by a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+.inspired-by a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.inspired-by a::before {
+    content: '↗';
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.inspired-by a:hover::before {
+    transform: translateY(-2px) translateX(2px);
+    opacity: 1;
+}
+
+/* ===== LINKS ===== */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.privacy-link {
+    color: var(--primary);
+    background: rgba(67, 97, 238, 0.1);
+    border-color: rgba(67, 97, 238, 0.3);
+}
+
+.feedback-link {
+    color: var(--primary);
+    background: rgba(67, 97, 238, 0.1);
+    border-color: rgba(67, 97, 238, 0.3);
+}
+
+.donation-link {
+    color: var(--accent);
+    background: rgba(247, 37, 133, 0.1);
+    border-color: rgba(247, 37, 133, 0.3);
+}
+
+.footer-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.privacy-link:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.feedback-link:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.donation-link:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    opacity: 0.7;
+}

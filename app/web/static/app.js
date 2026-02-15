@@ -1,17 +1,39 @@
 // app.js
 import * as theme from './theme.js';
 import * as modals from './modals.js';
-import * as dailyEvents from './events.js';
-import * as classicEvents from './events-classic.js';
-import * as ui from './ui.js';
+import * as dailyEvents from './daily/events.js';
+import * as classicEvents from './classic/events-classic.js';
+import * as ui from './classic/ui-classic.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ---------------- STATE MACHINE ----------------
+    const GameState = Object.freeze({
+        IDLE: "idle",
+        PLAYING: "playing",
+        WON: "won",
+        GAVE_UP: "gave_up",
+        VIEWING_CONNECTIONS: "viewing_connections"
+    });
+
+    let gameState = GameState.IDLE;
+    let currentMode = null;
+    let modeController = null;
+
+    function setGameState(newState) {
+        gameState = newState;
+    }
+
+    function isPlaying() {
+        return gameState === GameState.PLAYING;
+    }
+
+    // ---------------- THEME ----------------
     const themeToggle = document.getElementById("themeToggle");
     theme.initTheme(themeToggle);
     themeToggle.addEventListener("click", () => theme.toggleTheme(themeToggle));
 
-    // ------------------ ELEMENTOS DO JOGO ------------------
+    // ---------------- ELEMENTOS ----------------
     const elements = {
         guessForm: document.getElementById("guess-form"),
         guessInput: document.getElementById("guess-input"),
@@ -21,105 +43,100 @@ document.addEventListener("DOMContentLoaded", () => {
         guessList: document.getElementById("guess-list"),
         progressFill: document.getElementById("progress-fill"),
         feedbackEl: document.getElementById("feedback"),
+
+        // RESULT
         resultArea: document.getElementById("result-area"),
+        resultModal: document.getElementById("result-modal"),
+        resultTitle: document.getElementById("result-title"),
         finalWordEl: document.getElementById("final-word"),
         finalAttemptsEl: document.getElementById("final-attempts"),
-        rankingList: document.getElementById("ranking-list"),
 
-        // 🔥 highlights (IMPORTANTE)
+        // LISTAS
+        rankingList: document.getElementById("ranking-list"),
+        connectionsList: document.getElementById("connections-modal-list"),
+
         lastGuessHighlight: document.getElementById("last-guess-highlight"),
-        hintHighlight: document.getElementById("hint-highlight"),
+        newGameBtn: document.getElementById("newGameBtn"),
+
+        attemptsEl: document.getElementById("attempts"),
+        hintsEl: document.getElementById("hints")
     };
 
-    // ------------------ BOTÕES DE MODO ------------------
     const classicBtn = document.getElementById("classicModeBtn");
     const dailyBtn = document.getElementById("dailyModeBtn");
 
-  function setActiveMode(mode) {
-
-    classicBtn.dataset.active = "false";
-    dailyBtn.dataset.active = "false";
-
-    if(mode === "classic"){
-        classicBtn.dataset.active = "true";
-    }
-
-    if(mode === "daily"){
-        dailyBtn.dataset.active = "true";
-    }
-}
-
-    // RESET GLOBAL (evita MUITOS bugs visuais)
+    // ---------------- UI RESET ----------------
     function resetUI() {
 
         elements.guessList.innerHTML = "";
+        elements.rankingList.innerHTML = "";
+        elements.feedbackEl.textContent = "";
 
-        if (elements.rankingList) {
-            elements.rankingList.innerHTML = "";
+        if (elements.connectionsList) {
+            elements.connectionsList.innerHTML = "";
         }
 
-        elements.feedbackEl.textContent = "";
-        elements.resultArea.classList.add("hidden");
+        document.querySelectorAll(".modal.visible")
+            .forEach(m => m.classList.remove("visible"));
 
-        elements.guessInput.value = "";
+        const toggle = document.getElementById("connections-toggle");
+
+        if (toggle) {
+            toggle.innerHTML = '<i class="fas fa-search"></i> Ver conexões';
+        }
+
         elements.guessInput.disabled = false;
-
         elements.submitBtn.disabled = false;
         elements.hintBtn.disabled = false;
         elements.giveUpBtn.disabled = false;
-
-        // 🔥 RESET DOS HIGHLIGHTS (corrige bug da dica não aparecer)
-        if (elements.lastGuessHighlight) {
-            elements.lastGuessHighlight.textContent = "";
-            elements.lastGuessHighlight.classList.remove("pop");
-        }
-
-        if (elements.hintHighlight) {
-            elements.hintHighlight.textContent = "";
-            elements.hintHighlight.classList.remove("hint-pop");
-        }
-
-        // 🔥 Reset da barra de progresso
-        if (elements.progressFill) {
-            elements.progressFill.style.width = "0%";
-        }
     }
 
-    // =============================
-    // INICIALIZADOR DE MODO (ULTRA)
-    // =============================
+    function setActiveMode(mode) {
+        classicBtn.dataset.active = (mode === "classic");
+        dailyBtn.dataset.active = (mode === "daily");
+    }
 
+    // ---------------- START MODE ----------------
     function startMode(mode) {
 
-        setActiveMode(mode);
+        if (currentMode === mode) return;
+
+        if (modeController) {
+            modeController.abort();
+        }
+
+        modeController = new AbortController();
+        const signal = modeController.signal;
+
+        currentMode = mode;
+
         resetUI();
-
-        // evita múltiplos listeners
-        elements.guessForm?.replaceWith(elements.guessForm.cloneNode(true));
-
-        // re-mapear após clone
-        elements.guessForm = document.getElementById("guess-form");
+        setActiveMode(mode);
+        setGameState(GameState.PLAYING);
 
         if (mode === "classic") {
-            classicEvents.initClassicEvents(elements);
+            classicEvents.initClassicEvents(elements, signal, setGameState);
         } else {
-            dailyEvents.initDailyEvents(elements);
+            dailyEvents.initDailyEvents(elements, signal, setGameState);
         }
     }
 
-    // =============================
-    // EVENTOS DOS BOTÕES
-    // =============================
+    // ---------------- BOTÕES DE MODO ----------------
+    classicBtn.addEventListener("click", () => startMode("classic"));
+    dailyBtn.addEventListener("click", () => startMode("daily"));
 
-    classicBtn.onclick = () => startMode("classic");
-    dailyBtn.onclick = () => startMode("daily");
+    // ---------------- NOVO JOGO ----------------
+    elements.newGameBtn.addEventListener("click", () => {
 
-    // Inicializa modo diário
-    startMode("daily");
+        modals.closeModal(elements.resultModal);
 
-    // ------------------ MODAIS ------------------
+        setGameState(GameState.IDLE);
+
+        startMode(currentMode || "daily");
+    });
+
+    // ---------------- MODAIS ----------------
     modals.initModals({
-
         feedbackLink: document.getElementById("feedbackLink"),
         feedbackModal: document.getElementById("feedback-modal"),
         closeFeedbackModal: document.getElementById("close-feedback-modal"),
@@ -135,20 +152,20 @@ document.addEventListener("DOMContentLoaded", () => {
         closePrivacyModal: document.getElementById("close-privacy-modal"),
         acceptPrivacyBtn: document.getElementById("accept-privacy-btn"),
 
-        // desistir
         giveUpBtn: elements.giveUpBtn,
         giveUpModal: document.getElementById("give-up-modal"),
         closeGiveUpModal: document.getElementById("close-give-up-modal"),
         confirmGiveUp: document.getElementById("confirm-give-up"),
         cancelGiveUp: document.getElementById("cancel-give-up"),
 
-        showAuditBtn: document.getElementById("show-audit"),
-        connectionsModal: document.getElementById("connections-modal"),
-        closeModal: document.getElementById("close-modal"),
+        resultModal: elements.resultModal,
+        closeResultModal: document.getElementById("close-result-modal"),
+
 
         ui,
-        resultArea: elements.resultArea,
-        finalWordEl: elements.finalWordEl
+        resultArea: elements.resultArea
     });
 
+    // inicia automaticamente
+    startMode("classic");
 });
