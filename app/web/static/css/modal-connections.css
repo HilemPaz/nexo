@@ -1,0 +1,48 @@
+.connections-modal-content {
+    max-width: 520px;
+}
+
+.connections-modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.connections-modal-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 6px;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.1rem;
+}
+
+.connections-modal-list li span:first-child {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.connections-modal-list li span:last-child {
+    font-weight: bold;
+    color: var(--card);
+}
+
+/* animação leve */
+#connections-modal {
+    backdrop-filter: blur(4px);
+}
+
+.connections-modal-content {
+    animation: connectionsPop 0.25s ease;
+}
+
+@keyframes connectionsPop {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

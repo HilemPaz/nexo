@@ -8282,6 +8282,8 @@ queixo
 quente
 quentinha
 quentinho
+querido
+querida
 querer
 querosene
 quesito
@@ -9010,7 +9012,7 @@ sanar
 samurai
 sanatório
 sancionar
-sanadália
+sandália
 sangramento
 sanduíche
 saneamento
