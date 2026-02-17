@@ -43,7 +43,9 @@ export function showResult(
 
     if (!resultAreaEl) return;
 
-    const isWinner = attempts?.some(a => a.correct);
+    const isWinner = attempts?.some(a =>
+        a.success === true || a.rank === 1
+    );
 
     titleEl.textContent =
         isWinner
@@ -78,16 +80,16 @@ export function renderHighlight(elements, guess) {
     highlight.classList.add("pop");
 }
 
-export function updateCounters(elements, state){
+export function updateCounters(elements, state) {
 
-    if(elements.attemptsEl)
+    if (elements.attemptsEl)
         elements.attemptsEl.textContent = state.attemptsCount ?? 0;
 
-    if(elements.hintsEl)
+    if (elements.hintsEl)
         elements.hintsEl.textContent = state.hints ?? 0;
 }
 
-export function showFeedback(el, message, type="error") {
+export function showFeedback(el, message, type = "error") {
 
     if (!el) return;
 

@@ -45,7 +45,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ==========================
+    // SESSION ID (um por jogador)
+    // ==========================
+    function getSessionId() {
+        let id = localStorage.getItem("game_session");
 
+        if (!id) {
+            id = crypto.randomUUID();
+            localStorage.setItem("game_session", id);
+        }
+
+        return id;
+    }
+
+    window.getSessionId = getSessionId;
+
+    const originalFetch = window.fetch;
+
+    window.fetch = function (url, options = {}) {
+        options.headers = {
+            ...(options.headers || {}),
+            "X-Session-ID": getSessionId()
+        };
+
+        return originalFetch(url, options);
+    };
     // ---------------- THEME ----------------
     const themeToggle = document.getElementById("themeToggle");
     theme.initTheme(themeToggle);

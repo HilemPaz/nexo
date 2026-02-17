@@ -1031,6 +1031,7 @@ bando
 banha
 banhar
 banheira
+banheiro
 banho
 banimento
 banir
@@ -1227,7 +1228,6 @@ branqueamento
 brasa
 brasil
 brasão
-brasília
 braço
 bravo
 brecha
@@ -2982,6 +2982,7 @@ determinação
 detestar
 detetive
 detonar
+detonação
 detrimento
 detrito
 deus
@@ -3874,6 +3875,7 @@ estereótipo
 esterilização
 esticar
 estigma
+estilete
 estilhaço
 estilista
 estilo
@@ -7524,6 +7526,7 @@ período
 pesadelo
 pesar
 pescador
+pesca
 pescar
 pescaria
 pescoço
@@ -9284,6 +9287,7 @@ suco
 sudeste
 sudoeste
 soprar
+soro
 sorrir
 sorriso
 sorte
@@ -9536,6 +9540,7 @@ tolerante
 tolerar
 tolerância
 tom
+tomada
 tomar
 tomate
 tombar

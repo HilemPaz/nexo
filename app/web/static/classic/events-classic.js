@@ -91,7 +91,7 @@ export function initClassicEvents(elements) {
 
             ui.renderHighlight(elements, result);
 
-            if (result.correct || state.finished) {
+            if (result.success) {
 
                 let connections = [];
                 try {

@@ -1,12 +1,12 @@
 # web/app.py
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Header
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from app.web.state import game
+from app.web.state import get_game, reset_game
 from app.core.vocabulary import is_valid_word
 
 from app.engine.embeddings import preload_vocab
@@ -35,7 +35,9 @@ def index(request: Request):
 
 
 @app.post("/guess")
-def guess(data: Guess):
+def guess(data: Guess, x_session_id: str = Header(...)):
+    game = get_game(x_session_id)
+
     word = data.word.lower().strip()
 
     if not is_valid_word(word):
@@ -53,23 +55,26 @@ def guess(data: Guess):
 
 
 @app.post("/new-game")
-def new_game():
-    game.new_game()
+def new_game(x_session_id: str = Header(...)):
+    reset_game(x_session_id)
     return {"status": "ok"}
 
 
 @app.get("/audit")
-def audit():
+def audit(x_session_id: str = Header(...)):
+    game = get_game(x_session_id)
     return game.audit(limit=200)
 
 
 @app.get("/hint")
-def hint():
+def hint(x_session_id: str = Header(...)):
+    game = get_game(x_session_id)
     return game.hint()
 
 
 @app.post("/give-up")
-def give_up():
+def give_up(x_session_id: str = Header(...)):
+    game = get_game(x_session_id)
     result = game.give_up()
 
     if "error" in result:

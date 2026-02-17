@@ -89,7 +89,7 @@
      }
 
 .result-actions {
-    display: flex;
+    display: ruby;
     flex-direction: column;
     gap: 10px;
 }

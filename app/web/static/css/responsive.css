@@ -129,6 +129,19 @@
         right: 0;
     }
 
+    .result-btn {
+    padding: 14px 8px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
     /* Outros cards continuam abaixo do main */
     .hints-card,
     .info-card {
