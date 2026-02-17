@@ -85,7 +85,7 @@ export function addAttempt(state, attempt) {
         ...state,
         attempts: [...state.attempts, normalized],
         attemptsCount,
-        finished: normalized.correct || attemptsCount >= 10
+        finished: normalized.correct
     };
     saveState(newState);
     return newState;

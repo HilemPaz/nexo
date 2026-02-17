@@ -1,7 +1,6 @@
 // app.js
 import * as theme from './theme.js';
 import * as modals from './modals.js';
-import * as dailyEvents from './daily/events.js';
 import * as classicEvents from './classic/events-classic.js';
 import * as ui from './classic/ui-classic.js';
 
@@ -17,16 +16,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let gameState = GameState.IDLE;
-    let currentMode = null;
     let modeController = null;
 
     function setGameState(newState) {
         gameState = newState;
     }
 
-    function isPlaying() {
-        return gameState === GameState.PLAYING;
+    // MOBILE MENU
+    const menuToggle = document.getElementById("mobileMenuToggle");
+    const actionsCard = document.querySelector(".actions-card");
+    let overlay = document.querySelector(".mobile-overlay");
+
+    if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.className = "mobile-overlay";
+        document.body.appendChild(overlay);
     }
+
+    if (menuToggle && actionsCard) {
+        menuToggle.addEventListener("click", () => {
+            actionsCard.classList.toggle("open");
+            overlay.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", () => {
+            actionsCard.classList.remove("open");
+            overlay.classList.remove("active");
+        });
+    }
+
 
     // ---------------- THEME ----------------
     const themeToggle = document.getElementById("themeToggle");
@@ -37,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const elements = {
         guessForm: document.getElementById("guess-form"),
         guessInput: document.getElementById("guess-input"),
-        submitBtn: document.getElementById("submitBtn"),
         hintBtn: document.getElementById("hint-btn"),
         giveUpBtn: document.getElementById("give-up-btn"),
         guessList: document.getElementById("guess-list"),
@@ -52,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         finalAttemptsEl: document.getElementById("final-attempts"),
 
         // LISTAS
-        rankingList: document.getElementById("ranking-list"),
         connectionsList: document.getElementById("connections-modal-list"),
 
         lastGuessHighlight: document.getElementById("last-guess-highlight"),
@@ -62,14 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
         hintsEl: document.getElementById("hints")
     };
 
-    const classicBtn = document.getElementById("classicModeBtn");
-    const dailyBtn = document.getElementById("dailyModeBtn");
-
     // ---------------- UI RESET ----------------
     function resetUI() {
 
         elements.guessList.innerHTML = "";
-        elements.rankingList.innerHTML = "";
         elements.feedbackEl.textContent = "";
 
         if (elements.connectionsList) {
@@ -86,20 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         elements.guessInput.disabled = false;
-        elements.submitBtn.disabled = false;
         elements.hintBtn.disabled = false;
         elements.giveUpBtn.disabled = false;
     }
 
-    function setActiveMode(mode) {
-        classicBtn.dataset.active = (mode === "classic");
-        dailyBtn.dataset.active = (mode === "daily");
-    }
 
     // ---------------- START MODE ----------------
-    function startMode(mode) {
-
-        if (currentMode === mode) return;
+    function startClassic() {
 
         if (modeController) {
             modeController.abort();
@@ -108,22 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
         modeController = new AbortController();
         const signal = modeController.signal;
 
-        currentMode = mode;
-
         resetUI();
-        setActiveMode(mode);
         setGameState(GameState.PLAYING);
 
-        if (mode === "classic") {
-            classicEvents.initClassicEvents(elements, signal, setGameState);
-        } else {
-            dailyEvents.initDailyEvents(elements, signal, setGameState);
-        }
+        classicEvents.initClassicEvents(elements, signal, setGameState);
     }
-
-    // ---------------- BOTÕES DE MODO ----------------
-    classicBtn.addEventListener("click", () => startMode("classic"));
-    dailyBtn.addEventListener("click", () => startMode("daily"));
 
     // ---------------- NOVO JOGO ----------------
     elements.newGameBtn.addEventListener("click", () => {
@@ -132,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setGameState(GameState.IDLE);
 
-        startMode(currentMode || "daily");
+        startClassic();
     });
 
     // ---------------- MODAIS ----------------
@@ -167,5 +161,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // inicia automaticamente
-    startMode("classic");
+    startClassic();
 });

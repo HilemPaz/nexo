@@ -7,7 +7,6 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from app.web.state import game
-from app.web.state import daily_game
 from app.core.vocabulary import is_valid_word
 
 from app.engine.embeddings import preload_vocab
@@ -78,31 +77,3 @@ def give_up():
 
     return result
 
-@app.get("/daily")
-def get_daily():
-    daily_game.ensure_today()
-    
-    return {
-        "date": daily_game.daily_date,
-        "guesses": daily_game.guesses,
-        "finished": daily_game.finished,
-        "total_words": daily_game.total_words
-    }
-
-@app.post("/daily/guess")
-def daily_guess(data: Guess):
-    result = daily_game.guess(data.word)
-
-    if "error" in result:
-        return JSONResponse(result, status_code=400)
-
-    return result
-
-@app.post("/daily/give-up")
-def daily_give_up():
-    result = daily_game.give_up()
-
-    if "error" in result:
-        return JSONResponse(result, status_code=400)
-
-    return result

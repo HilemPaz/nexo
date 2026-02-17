@@ -20,27 +20,35 @@
     <link rel="stylesheet" href="../static/css/modal-donation.css">
     <link rel="stylesheet" href="../static/css/modal-give-up.css">
     <link rel="stylesheet" href="../static/css/modal-connections.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
 
     <link rel="stylesheet" href="../static/css/components.css">
     <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
 </head>
 
 <body>
     <div class="container">
         <header>
-            <div class="logo">
-                <div class="logo-icon">🧩</div>
-                <div>
-                    <h1>NEXO</h1>
-                    <p class="inspired-note">Descubra a palavra secreta</p>
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">🧩</div>
+                    <div>
+                        <h1>NEXO</h1>
+                        <p class="inspired-note">Descubra a palavra secreta</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- BOTÃO HAMBURGUER -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <div class="header-controls">
-                <div class="mode-toggle">
-                    <button id="classicModeBtn" class="mode-btn active">Clássico</button>
-                    <button id="dailyModeBtn" class="mode-btn">Diário 🗓️</button>
-                </div>
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon"></i>
                     <span>Modo Escuro</span>
@@ -48,12 +56,10 @@
             </div>
         </header>
 
-        <div class="game-container">
+
+        <div class="game-container premium-layout">
             <main class="game-main">
                 <div class="game-card">
-                     <div id="daily-indicator" class="daily-indicator hidden">
-                        🗓️ <strong>Modo Diário</strong> — uma palavra por dia
-                    </div>
                     <div id="counter" class="game-stats">
                         <div class="stat-item">
                             <i class="fas fa-hashtag"></i>
@@ -68,17 +74,13 @@
                             <span>DICAS: <span id="hints">0</span></span>
                         </div>
                     </div>
-                   
+
                     <!-- Área de entrada -->
                     <div class="input-area">
                         <form id="guess-form">
                             <div class="input-group">
                                 <input type="text" id="guess-input" placeholder="Digite uma palavra..."
                                     autocomplete="off" required />
-                                <button type="submit" class="submit-btn" id="submitBtn">
-                                    <i class="fas fa-paper-plane"></i>
-                                    ENVIAR
-                                </button>
                             </div>
                         </form>
 
@@ -109,7 +111,7 @@
                 </div>
             </main>
 
-            <aside class="sidebar">
+            <aside class="sidebar premium-sidebar" id="premiumSidebar">
                 <!-- Ações do jogo -->
                 <div class="actions-card">
                     <h3 class="card-title"><i class="fas fa-gamepad"></i> Ações</h3>
@@ -123,10 +125,6 @@
                             DESISTIR
                         </button>
                     </div>
-                </div>
-                <div class="ranking-card">
-                    <h3 class="card-title"><i class="fas fa-trophy"></i> Ranking</h3>
-                    <ul id="ranking-list" class="ranking-list"></ul>
                 </div>
 
                 <!-- Dicas disponíveis -->
@@ -377,27 +375,12 @@
                         <p>Sua opinião é muito importante para melhorar o Nexo!</p>
                     </div>
 
-                    <div class="feedback-options">
-                        <div class="feedback-question">
-                            <h3><i class="fas fa-smile"></i> Como está sua experiência?</h3>
-                            <div class="emoji-options">
-                                <button class="emoji-option" data-rating="1">😞</button>
-                                <button class="emoji-option" data-rating="2">😐</button>
-                                <button class="emoji-option" data-rating="3">🙂</button>
-                                <button class="emoji-option" data-rating="4">😊</button>
-                                <button class="emoji-option" data-rating="5">🤩</button>
-                            </div>
-                            <!-- Adicionei este label para mostrar a avaliação -->
-                            <p class="rating-label" id="rating-label"></p>
-                        </div>
-                    </div>
-
                     <div class="google-form-section">
                         <h3><i class="fab fa-google"></i> Enviar Feedback</h3>
                         <p>Para enviar seu feedback detalhado, clique no botão abaixo para abrir o formulário do Google:
                         </p>
-                        <a href="https://forms.google.com/SEU_LINK_AQUI" target="_blank" rel="noopener"
-                            class="google-form-btn" id="open-google-form">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScA1rfG-XEiu1PQu8ppl-FYbXvLjN9kBQfs_b8e2PZwRyGRfg/viewform?usp=publish-editor"
+                            target="_blank" rel="noopener" class="google-form-btn" id="open-google-form">
                             <i class="fab fa-google"></i> Enviar Feedback
                         </a>
 
@@ -466,15 +449,10 @@
                     </div>
                 </div>
 
-                <div class="modal-footer">
-                    <button class="modal-btn close-btn" id="close-donation">
-                        <i class="fas fa-times"></i> Fechar
-                    </button>
-                </div>
             </div>
         </div>
     </div>
-
+    <div class="mobile-overlay" id="mobileOverlay"></div>
     <script type="module" src="/static/app.js?v=1"></script>
 </body>
 

@@ -60,3 +60,7 @@
 [data-theme="dark"] .instructions { background: rgba(67, 97, 238, 0.1);}
 [data-theme="dark"] .thank-you {background: rgba(247, 37, 133, 0.1);}
 [data-theme="dark"] .google-form-btn {color:#ffffff;}
+[data-theme="dark"] .alternative-support { background: #1e1f25; border-color: rgba(255,255,255,0.06);}
+[data-theme="dark"] .alternative-options li { background: rgba(255,255,255,0.04);}
+[data-theme="dark"] .alternative-options li:hover { background: rgba(255,255,255,0.08);}
+[data-theme="dark"] .alternative-support p { color: #aaa;}
