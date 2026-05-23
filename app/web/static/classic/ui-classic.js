@@ -38,6 +38,7 @@ export function showResult(
     finalWordEl,
     finalAttemptsEl,
     attempts,
+    attemptsCount,
     word
 ) {
 
@@ -51,12 +52,18 @@ export function showResult(
         isWinner
             ? "🎉 Você acertou!"
             : "😢 Você desistiu!";
-
-    if (finalWordEl)
-        finalWordEl.textContent = word ?? "???";
+    let finalWord = word;
+    if (!finalWord || finalWord === "???") {
+        const correctAttempt = attempts?.find(a => a.rank === 1);
+        if (correctAttempt) {
+            finalWord = correctAttempt.word;
+        }
+    }
+     if (finalWordEl)
+        finalWordEl.textContent = finalWord ?? "???";
 
     if (finalAttemptsEl)
-        finalAttemptsEl.textContent = attempts?.length ?? 0;
+        finalAttemptsEl.textContent = attemptsCount ?? attempts?.length ?? 0;
 
     resultAreaEl.classList.remove("hidden");
 }

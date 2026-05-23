@@ -65,6 +65,7 @@ abrangente
 abranger
 abrangência
 abraçar
+abraço
 abreviação
 abrigar
 abrigo
@@ -72,6 +73,7 @@ abril
 abrir
 abrupta
 absoluto
+absolver
 absolvir
 absolvição
 absorvente
@@ -90,12 +92,14 @@ abundância
 abusar
 abusiva
 abusivo
+abuso
 abutre
 abóbora
 acabamento
 acabar
 academia
 acadêmico
+acalentar
 acalmar
 acampamento
 acampar
@@ -169,6 +173,7 @@ açúcar
 acórdão
 acúmulo
 acústica
+ácido
 adaga
 adaptar
 adaptação
@@ -223,6 +228,7 @@ adotivo
 adoção
 adquirir
 adrenalina
+adubo
 adulto
 adultério
 adventista
@@ -250,6 +256,7 @@ afiar
 afiliar
 afilial
 afiliação
+afilhado
 afim
 afinal
 afinação
@@ -265,6 +272,7 @@ afogamento
 afogar
 afrodite
 afrontar
+afrouxar
 afundar
 agarrar
 agasalho
@@ -280,6 +288,7 @@ aglomerar
 aglomeração
 agonia
 agosto
+agora
 agraciar
 agradar
 agradecer
@@ -330,7 +339,7 @@ alarme
 alavancar
 albergue
 albino
-albânia
+alcance
 alcançar
 alcoolismo
 alcorão
@@ -358,6 +367,7 @@ alfaiate
 alfândega
 alforria
 algas
+algarismo
 algemar
 algema
 algo
@@ -367,7 +377,9 @@ alheio
 alho
 aliança
 aliar
-alicerces
+aliado
+alicate
+alicerce
 alienar
 alienação
 alienígena
@@ -381,6 +393,7 @@ alisamento
 alisar
 alistamento
 alistar
+aliviar
 alma
 almanaque
 almirante
@@ -411,12 +424,14 @@ aluguel
 alumínio
 aluno
 alusão
+alvará
 alvejar
 alvenaria
 alvo
 alçar
 além
 alérgica
+alíquota 
 alívio
 amar
 amador
@@ -457,6 +472,8 @@ amigável
 amistoso
 amizade
 amnésia
+amolar
+amolador
 amor
 amora
 amoroso
@@ -464,6 +481,7 @@ amostra
 amostragem
 amparar
 amparo
+ampliar
 ampliação
 amplificador
 amplificação
@@ -486,6 +504,7 @@ anarquia
 anarquista
 anatomia
 ancestral
+ancestralidade
 ancião
 andar
 andorinha
@@ -512,6 +531,8 @@ aniquilar
 anistia
 aniversariante
 aniversário
+aniquilar
+Aniquilação
 anjo
 ano
 anoitecer
@@ -522,6 +543,7 @@ anormal
 anotar
 anotação
 anseio
+ansioso
 ansiedade
 anta
 antagonista
@@ -548,6 +570,8 @@ antigo
 antiguidade
 antipatia
 antologia
+antropofágico
+antropofagia
 antropologia
 antropólogo
 antártica
@@ -563,6 +587,7 @@ análogo
 anão
 anônimo
 anúncio
+anzol
 aonde
 aorta
 apagar
@@ -671,6 +696,7 @@ arbitrário
 arbusto
 arbítrio
 arca
+arcabouço
 arcaico
 arcanjo
 arcar
@@ -714,6 +740,7 @@ arquitetura
 arquitetônico
 arquivamento
 arquivar
+arquivo
 arraial
 arrancar
 arranhar
@@ -733,6 +760,7 @@ arrependimento
 arrepiar
 arrepio
 arriscar
+arrombar
 arrogante
 arrogância
 arroz
@@ -762,6 +790,7 @@ ascendente
 ascender
 ascendência
 ascensão
+asco
 asfalto
 asfixia
 asma
@@ -773,6 +802,7 @@ aspirante
 aspirar
 aspiração
 aspirina
+assalariado
 assaltante
 assaltar
 assar
@@ -780,7 +810,7 @@ assassinar
 assassinato
 assassino
 assegurar
-assembléia
+assembleia
 assentamento
 assentar
 assento
@@ -836,6 +866,7 @@ aterrorizante
 atestar
 ateu
 ateísmo
+atiçar
 atingir
 atirador
 atirar
@@ -903,6 +934,7 @@ ausente
 austeridade
 ausência
 autarquia
+autenticar
 autenticação
 autenticidade
 autismo
@@ -927,6 +959,7 @@ autoritarismo
 autoritário
 autorizar
 autorização
+autêntico
 autêntica
 autódromo
 autógrafo
@@ -944,6 +977,7 @@ avançar
 avanço
 avaria
 aveia
+avenida
 avental
 aventura
 aventureiro
@@ -955,12 +989,14 @@ avesso
 avestruz
 aviador
 aviação
+aviso
 avisar
 avistar
 avião
 avó
 avô
 axé
+axila
 azar
 azedo
 azeite
@@ -968,6 +1004,7 @@ azeitona
 azul
 azulejo
 açaí
+açafrão
 aço
 açougue
 açougueiro
@@ -1004,7 +1041,9 @@ baião
 bala
 balançar
 balanço
+balança
 bala
+balconista
 balcão
 balde
 balear
@@ -1048,6 +1087,7 @@ barbear
 barbearia
 barbeiro
 barco
+barista
 barganha
 baronesa
 barra
@@ -1062,6 +1102,7 @@ barroco
 barulhento
 barulho
 barão
+base
 basquete
 bastante
 bastar
@@ -1106,6 +1147,7 @@ beneficente
 beneficiar
 beneficiário
 benevolente
+benevolência
 bengala
 benguela
 benigno
@@ -1143,13 +1185,16 @@ bilíngue
 bimestre
 bingo
 binário
+binóculo
 biocombustíveis
 biodiversidade
+biodegradável
 biografia
 biologia
 biológico
 bioma
 biomedicina
+biometria
 biomédico
 biomédica
 bioquímica
@@ -1158,6 +1203,7 @@ biotecnologia
 bipolar
 biquini
 birra
+bisbilhotar
 bisavô
 biscoito
 bispo
@@ -1173,6 +1219,7 @@ blogueiro
 blogue
 bloqueador
 bloquear
+bloqueio
 blusa
 blueberry
 boate
@@ -1204,6 +1251,7 @@ bondade
 bonde
 boneca
 bonita
+bonito
 boné
 borboleta
 borda
@@ -1230,6 +1278,7 @@ brasil
 brasão
 braço
 bravo
+bravura
 brecha
 brechó
 brega
@@ -1238,6 +1287,7 @@ breve
 brigadeiro
 brigar
 briga
+brilho
 brilhar
 brilhante
 brincadeira
@@ -1254,6 +1304,7 @@ bronzear
 brotar
 brutal
 brutalidade
+bruto
 bruxa
 bruxaria
 brócolis
@@ -1328,7 +1379,9 @@ cair
 cais
 caixa
 caixão
+cajado
 caju
+calabouço
 calabresa
 calafrio
 calamidade
@@ -1337,6 +1390,7 @@ calcanhar
 calcinha
 calculadora
 calcular
+calculista
 calcário
 calda
 caldeira
@@ -1408,6 +1462,7 @@ canguru
 canhoto
 canhão
 canibal
+canibalismo
 canil
 canino
 canivete
@@ -1462,6 +1517,7 @@ capturar
 capuz
 capítulo
 capô
+caqui
 cara
 caraca
 caracol
@@ -1472,12 +1528,15 @@ característica
 carambola
 caramelo
 caranguejo
+carapuça
 caravana
 carboidratos
 carbono
 carbônico
 carcaça
 carcerária
+carcerário
+carcereiro
 cardeal
 cardiologia
 cardiologista
@@ -1508,6 +1567,7 @@ carnavalesco
 carne
 carneiro
 carnificina
+carnívoro
 carnival
 caro
 carona
@@ -1531,6 +1591,7 @@ cartaz
 carteira
 carteiro
 cartel
+cartesiano
 cartilagem
 cartilha
 cartografia
@@ -1538,7 +1599,6 @@ cartola
 cartucho
 cartunista
 cartão
-cartel
 cartório
 carvão
 caráter
@@ -1558,7 +1618,6 @@ caseiro
 caso
 cassação
 cassete
-cassiano
 casta
 castanha
 castanheira
@@ -1590,6 +1649,7 @@ catástrofe
 católica
 católico
 cauda
+caule
 causa
 causador
 causar
@@ -1678,6 +1738,7 @@ cervejaria
 cervical
 cervo
 cerâmica
+cessar
 cesariana
 cesta
 cesto
@@ -1840,6 +1901,7 @@ cláusula
 clã
 clínica
 clínico
+coador
 coadjuvante
 coagulação
 coalizão
@@ -1870,6 +1932,7 @@ coerência
 coesão
 coexistência
 cofre
+cognição
 cogita
 cognitiva
 cognitivo
@@ -1950,6 +2013,7 @@ comemorativa
 comemoração
 comendador
 comentador
+comentar
 comentarista
 comentário
 comer
@@ -2028,6 +2092,7 @@ comprador
 compram
 compramos
 comprar
+compra
 compreender
 compreensiva
 compreensivo
@@ -2097,6 +2162,7 @@ condicionador
 condicional
 condicionamento
 condicionar
+condimento
 condizente
 condição
 condolência
@@ -2112,10 +2178,12 @@ conexão
 confecção
 confederação
 confeitaria
+confeiteiro
 conferencia
 conferencista
 conferência
 confessar
+confete
 confiabilidade
 confiante
 confiança
@@ -2168,6 +2236,7 @@ conjunto
 conjuntura
 conjunção
 conotação
+conquista
 conquistador
 conquistar
 consagrar
@@ -2236,6 +2305,7 @@ consultora
 consultoria
 consultório
 consumar
+consumir
 consumidor
 consumo
 consórcio
@@ -2280,7 +2350,9 @@ contramão
 contraposição
 contraste
 contratar
+contratante
 contratação
+contratempo
 contrato
 contratual
 contração
@@ -2290,6 +2362,7 @@ contribuição
 controlador
 controladora
 controlar
+controle
 controvérsia
 controverso
 contrário
@@ -2307,6 +2380,8 @@ convenção
 convergente
 convergência
 conversação
+conversa
+conversar
 conversor
 conversão
 converter
@@ -2335,6 +2410,7 @@ copo
 coqueiro
 coquetel
 cor
+coragem
 corajosa
 corajoso
 coral
@@ -2406,6 +2482,7 @@ costeira
 costeiro
 costela
 costume
+costura
 costurar
 costureira
 cota
@@ -2462,6 +2539,7 @@ criminosa
 criminoso
 cripta
 criptografia
+criptografar
 crise
 crista
 cristal
@@ -2481,6 +2559,7 @@ cronista
 cronograma
 cronologia
 cronológica
+cronômetro
 crosta
 croácia
 crucial
@@ -2588,6 +2667,7 @@ cômodo
 cônjuge
 cônsul
 cúbico
+cúrcuma
 cúmplice
 cúmulo
 cúpula
@@ -2642,11 +2722,13 @@ decretar
 decreto
 decréscimo
 decência
+década
 dedicar
 dedicatória
 dedicação
 dedo
 dedução
+deduzir
 defeito
 defender
 defensiva
@@ -2665,6 +2747,8 @@ deflagrar
 deformação
 defunto
 degeneração
+degustar
+degustação
 degradante
 degradar
 degradação
@@ -2764,6 +2848,7 @@ desabafo
 desabamento
 desabar
 desabrigar
+desabrochar
 desacato
 desaceleração
 desacordo
@@ -2772,6 +2857,7 @@ desafiante
 desafiar
 desafio
 desagradável
+desamarrar
 desanimar
 desaparecer
 desaparecimento
@@ -2847,6 +2933,7 @@ desempate
 desempenhar
 desempenho
 desemprego
+desempregado
 desencadear
 desenfrear
 desenhar
@@ -2907,6 +2994,7 @@ deslocação
 deslumbrante
 desmaiar
 desmascarar
+desmatar
 desmatamento
 desmembramento
 desmontar
@@ -2924,6 +3012,8 @@ desonesto
 desordem
 desorganizar
 desorganização
+desonroso
+desonra
 despachar
 despacho
 despedir
@@ -2940,6 +3030,7 @@ desportivo
 despreocupar
 despreocupado
 desprezar
+desprezo
 desprezível
 desproporcional
 desprovir
@@ -2952,8 +3043,10 @@ destinar
 destinatário
 destinação
 destino
+destituir
 destituição
 destreza
+destro
 destroço
 destruir
 destruição
@@ -2980,6 +3073,7 @@ determinante
 determinar
 determinação
 detestar
+detestável
 detetive
 detonar
 detonação
@@ -2996,11 +3090,14 @@ devedor
 dever
 devolução
 devolve
+devolver
 devorar
 devoto
 devoção
 dezembro
 dezena
+dígito
+dívida
 dia
 diabete
 diabo
@@ -3270,6 +3367,7 @@ duvidosa
 duvidoso
 débito
 dólar
+dúvida
 dúzia
 ebulição
 eclesiástica
@@ -3300,6 +3398,7 @@ editora
 editorial
 edição
 educacional
+educado
 educador
 educadora
 educar
@@ -3571,9 +3670,11 @@ entendimento
 enterrar
 enterro
 entes
+enteado
 entidade
 entorno
 entorpecente
+entrada
 entrar
 entrave
 entre
@@ -3742,6 +3843,7 @@ esmalte
 esmeralda
 esmola
 espacial
+espada
 espalhar
 espancar
 espanha
@@ -3890,8 +3992,11 @@ estimulação
 estojo
 estopim
 estoque
+estornar
+estorno
 estourar
 estouro
+estoteante
 estrada
 estragar
 estragado
@@ -3931,6 +4036,7 @@ estudo
 estudiosa
 estudioso
 estufa
+estupendo
 estupidez
 estuprador
 estuprar
@@ -3949,6 +4055,7 @@ estético
 estímulo
 estômago
 estúdio
+estúpido
 esvaziar
 esôfago
 etanol
@@ -4000,6 +4107,7 @@ exausta
 exaustiva
 exaustivo
 exausto
+exaustor
 exaustão
 excedente
 exceder
@@ -4051,6 +4159,7 @@ expectativa
 expediente
 expedir
 expedição
+expelir
 experiente
 experientes
 experimental
@@ -4080,6 +4189,7 @@ exposição
 exposta
 exposto
 expressar
+expressionismo
 expressiva
 expressivo
 expresso
@@ -4121,6 +4231,7 @@ extremo
 exuberante
 exército
 exílio
+exímio
 exótica
 exótico
 eólica
@@ -4221,6 +4332,7 @@ fé
 febre
 fechadura
 fechar
+fechamento
 feder
 federal
 federativa
@@ -4253,6 +4365,7 @@ fera
 ferimento
 ferir
 ferida
+feroz
 fermentação
 fermento
 ferragem
@@ -4342,6 +4455,7 @@ fiscal
 fiscalizar
 fiscalização
 fisiculturista
+fisiculturismo
 fisiologia
 fisiológico
 fisioterapeuta
@@ -4352,6 +4466,7 @@ fitness
 fixa
 fixar
 fixação
+fixo
 fiel
 flagelo
 flagrante
@@ -4383,6 +4498,7 @@ flutuar
 flutuação
 fluvial
 fluxo
+fobia
 foca
 focal
 focar
@@ -4585,6 +4701,7 @@ gaiola
 gaita
 gaivota
 gala
+galanteador
 galeria
 galho
 galinha
@@ -4605,6 +4722,7 @@ ganhadora
 ganhar
 ganso
 ganância
+garagem
 garantia
 garantir
 garfo
@@ -4718,6 +4836,7 @@ glândula
 glóbulo
 glória
 glúten
+glúteo
 goiaba
 goiabada
 gol
@@ -4733,6 +4852,8 @@ gorda
 gordo
 gordura
 gorila
+gorgeta
+gorro
 gostar
 gosto
 gostosa
@@ -4754,6 +4875,7 @@ graduação
 grafia
 grafite
 grama
+gramado
 gramas
 gramatical
 grampo
@@ -4782,6 +4904,7 @@ gravar
 gravata
 gravação
 grave
+graveto
 gravidade
 gravidez
 gravitacional
@@ -4810,6 +4933,8 @@ gráfica
 gráfico
 gráti
 grão
+guloso
+guloseima
 guaraná
 guardanapo
 guardar
@@ -4817,6 +4942,7 @@ guarda
 guardiã
 guardião
 guarnição
+guarita
 guerra
 guerreira
 guerreiro
@@ -4883,6 +5009,7 @@ hidrelétrica
 hidrocarbonetos
 hidrográfica
 hidrogênio
+hidromassagem
 hidráulica
 hidráulico
 hiena
@@ -4895,6 +5022,7 @@ hino
 hipertensão
 hipnose
 hipocrisia
+hipopótamo
 hipoteca
 hipotética
 hipotético
@@ -4909,6 +5037,7 @@ histórica
 histórico
 hoje
 holanda
+holerite
 holofote
 holística
 homem
@@ -4935,6 +5064,7 @@ horror
 horrorosa
 horroroso
 horrível
+horripilante
 horta
 hortelã
 horário
@@ -4972,6 +5102,7 @@ hálito
 hélio
 hérnia
 hóspede
+hóstia
 iate
 ibérica
 iceberg
@@ -5216,7 +5347,9 @@ incorporar
 incorporação
 incorreta
 incorreto
+incrementar
 incremento
+incrédulo
 incriminar
 incrível
 incubação
@@ -5226,6 +5359,9 @@ incurável
 incêndio
 incógnita
 incômodo
+indagar
+indagação
+indecência
 indecente
 indeciso
 indecisão
@@ -5304,6 +5440,7 @@ infestar
 infidelidade
 infiel
 infiltrar
+infiltrado
 infiltração
 infindável
 infinidade
@@ -5417,6 +5554,7 @@ instantânea
 instantâneo
 instaurar
 instauração
+instigar
 instigante
 instinto
 institucional
@@ -5481,6 +5619,7 @@ intercessão
 intercontinental
 intercâmbio
 interdisciplinar
+interditar
 interdição
 interessante
 interessar
@@ -5543,6 +5682,7 @@ intrigar
 introduz
 introduzir
 introdução
+intrometido
 intrometer
 intromissão
 intruso
@@ -5552,6 +5692,7 @@ intuitivo
 intuito
 intuição
 intérprete
+íntegro
 inundar
 inundação
 inusitar
@@ -5781,6 +5922,7 @@ lança
 lançador
 lançamento
 lançar
+lâmpada
 lapso
 laptop
 lar
@@ -5867,6 +6009,7 @@ leoa
 leopardo
 leque
 ler
+lesma
 lesar
 lesionar
 leste
@@ -6000,6 +6143,7 @@ longevidade
 longitude
 longo
 longínquo
+lontra
 lorde
 lotar
 lotação
@@ -6029,6 +6173,7 @@ luminosa
 luminosidade
 luminoso
 lunar
+luneta
 lupa
 lustre
 luta
@@ -6132,6 +6277,7 @@ maldito
 maldição
 maldoso
 malefício
+maléfico
 maleta
 malha
 malhar
@@ -6153,8 +6299,8 @@ mamilo
 mamute
 mamãe
 mamão
-mamíferos
-mananciais
+mamífero
+manancial
 mancha
 manchar
 manchete
@@ -6238,6 +6384,7 @@ margarita
 margem
 marginal
 marginalizar
+marido
 marina
 marinha
 marinheiro
@@ -6271,6 +6418,7 @@ massagista
 massiva
 massivo
 mastigar
+mastigação
 mastro
 masturbar
 masturbação
@@ -6291,6 +6439,7 @@ materno
 matinal
 matilha
 mato
+matriarca
 matricular
 matrimonial
 matriz
@@ -6437,6 +6586,7 @@ metrô
 metáfora
 metálica
 metálico
+mexer
 micro
 microbiologia
 microfone
@@ -6468,8 +6618,9 @@ militar
 militância
 milênio
 milícia
-milímetros
+milímetro
 mimar
+mímica
 mimosa
 mina
 minar
@@ -6754,12 +6905,15 @@ nacionalismo
 nacionalista
 nacionalização
 nada
+nadadeira
 nadador
 nadar
 nado
 naipe
 namorar
 namoro
+namorada
+namorado
 nanotecnologia
 narcisista
 narciso
@@ -6853,7 +7007,6 @@ ninho
 ninja
 nitrato
 nitrogênio
-nixon
 nobre
 nobreza
 nocaute
@@ -7086,6 +7239,7 @@ organização
 orgasmo
 orgia
 orgulhar
+orgulho
 orgulhosa
 orgulhoso
 orgânica
@@ -7107,6 +7261,8 @@ oriunda
 oriundo
 orixás
 orla
+ornamento
+ornamentar
 orquestra
 orquestrar
 orquídea
@@ -7123,6 +7279,7 @@ osso
 ostentar
 ostentação
 ostra
+ótimo
 otimismo
 otimista
 otimização
@@ -7198,6 +7355,7 @@ pai
 painel
 paisagem
 paisagismo
+paisagista
 paisana
 paixão
 paladar
@@ -7430,6 +7588,7 @@ penitência
 pensador
 pensamento
 pensar
+pensionista
 penso
 pensão
 pente
@@ -7488,6 +7647,7 @@ permissão
 permitir
 permuta
 perna
+perpendicular
 perpetuar
 perplexo
 perpétua
@@ -7619,6 +7779,7 @@ plana
 planalto
 planear
 planejar
+planejamento
 planeta
 planetária
 planetário
@@ -7690,7 +7851,8 @@ política
 político
 pomar
 pombo
-ponce
+ponche
+ponderação
 ponderar
 ponta
 pontapé
@@ -7880,6 +8042,7 @@ preponderante
 prerrogativa
 presa
 presbiteriana
+prescrever
 prescrito
 prescrição
 presencial
@@ -8011,6 +8174,7 @@ prodígio
 proeminente
 proeminência
 proeza
+profano
 profecia
 proferir
 professional
@@ -8039,6 +8203,7 @@ progressiva
 progressivo
 progresso
 progressão
+proibido
 proibir
 proibição
 projeta
@@ -8058,6 +8223,7 @@ prometer
 prometo
 promissor
 promissora
+promissória
 promocional
 promotor
 promotora
@@ -8244,6 +8410,7 @@ pêra
 pêsames
 pêssego
 pílula
+pó
 pódio
 pólen
 pólo
@@ -8254,6 +8421,7 @@ pública
 público
 púrpura
 quadra
+quadrado
 quadrante
 quadril
 quadrilha
@@ -8269,6 +8437,7 @@ quantificar
 quantitativa
 quarentena
 quaresma
+quarto
 quarta
 quarteirão
 quartel
@@ -8278,6 +8447,7 @@ quatro
 quebrar
 queda
 queijo
+queimada
 queimadura
 queimar
 queixa
@@ -8360,6 +8530,7 @@ rampa
 rancho
 rancor
 ranking
+rapadura
 rapariga
 rapaz
 rapidez
@@ -8389,6 +8560,7 @@ razão
 raça
 ração
 raiz
+reabastecer
 reaberto
 reabertura
 reabilitar
@@ -8407,6 +8579,8 @@ realizador
 realizar
 realização
 realçar
+reativar
+reativo
 reator
 reavaliar
 reavaliação
@@ -8631,6 +8805,7 @@ relíquia
 relógio
 remanescente
 remediar
+remendo
 remessa
 remetente
 remeter
@@ -8667,6 +8842,7 @@ reorganização
 reparar
 reparação
 repartição
+repartir
 repassar
 repelente
 repensar
@@ -8726,6 +8902,8 @@ resfriamento
 resfriar
 resfriado
 resgatar
+resgate
+resguardar
 reside
 residencial
 residente
@@ -8794,8 +8972,10 @@ retardar
 retardo
 retenção
 reter
+retidão
 retina
 retiro
+retirar
 reto
 retomar
 retornar
@@ -8956,6 +9136,7 @@ rural
 ruído
 ruína
 rádio
+rápido
 rédeas
 régua
 réplica
@@ -8999,6 +9180,7 @@ saliente
 saliva
 salmo
 salmão
+salão
 salsa
 salsicha
 saltar
@@ -9023,6 +9205,7 @@ sangrar
 sangue
 sanidade
 sanitário
+santidade
 santo
 santuário
 sanção
@@ -9034,10 +9217,12 @@ saque
 sarampo
 sarar
 sarcasmo
+sarcástico
 sardinha
 sargento
 satisfação
 satisfazer
+satisfeito
 saturação
 satélite
 saturno
@@ -9067,11 +9252,14 @@ secundário
 seda
 sedento
 seduzir
+segunda
+segundo
 segundos		 
 segmento
 segredo
 segurança
 segurar
+seguro
 seguridade
 seio
 seita	 
@@ -9099,6 +9287,7 @@ semear
 semelhança
 semente
 seminário
+senso
 sensor
 sensorial
 sensual
@@ -9128,20 +9317,22 @@ sermão
 serpente
 serra
 sertão
+servente
+severo
+servir
+serviço
 servidor
 servidão
+servo
 separação
 sequela
 sequestro
 ser
-servo
 serenidade
-serviço
 setembro
-severo
-servir
 sexta
 sessão
+seta
 setor
 sexo
 short
@@ -9149,6 +9340,7 @@ shopping
 sexualidade
 sinal
 sinalizar
+sinistro
 símbolo
 sigilo
 sigla
@@ -9168,6 +9360,7 @@ similaridade
 simpatia
 simples
 simplicidade
+simpático
 sinuca
 sinônimo
 simular
@@ -9184,6 +9377,7 @@ sintaxe
 sintetizar
 sintoma
 sintonia
+soberano
 soberania
 soberba
 sobrancelha
@@ -9193,6 +9387,7 @@ sistemática
 sistemático
 sobrenatural
 sobrevivente
+sobreviver
 situação
 sobrinho
 socialismo
@@ -9211,6 +9406,8 @@ solenidade
 solene
 solicitação
 solicitar
+solda
+soldado
 sobrecarga
 software
 solitária
@@ -9224,6 +9421,7 @@ solteiro
 sobrevivência
 sociedade
 soma
+somar
 solvente
 sombra
 sombrio
@@ -9234,8 +9432,11 @@ sonegar
 sonegação
 sonhador
 sociologia
+sociopatia
+sociopata
 soco
 socorro
+socorrer
 sofrer
 sofrimento
 solar
@@ -9243,6 +9444,7 @@ solidariedade
 solidão
 solitário
 soltar
+solto
 sozinha
 sozinho
 subconsciente
@@ -9251,6 +9453,7 @@ suar
 suor
 suave
 suavizar
+solucionar
 solução
 subjacente
 subjetivo
@@ -9308,12 +9511,15 @@ sublime
 superior
 submeter
 superlotação
+supermercado
 submissão
 superstição
 supervisor
 supervisão
 substituir
 suposição
+supostamente
+supremo
 supremacia
 substância
 surdo
@@ -9322,7 +9528,10 @@ surf
 subterrâneo
 subversão
 suceder
+surreal
+surrealismo
 surpreender
+surpreendente
 sucesso
 sucessivo
 sucessão
@@ -9330,6 +9539,7 @@ suficiente
 sushi
 sufocar
 suspeito
+suspeitar
 sugar
 sugerir
 sugestão
@@ -9353,6 +9563,7 @@ síntese
 suplemento
 sócio
 sódio
+sólido
 sítio
 supor
 suportar
@@ -9403,12 +9614,15 @@ tarde
 tarefa
 tarifa
 tartaruga
+tatu
+tatuador
 tatuagem
 taxa
 taxar
 taça
 teatral
 teatro
+tecido
 tecla
 teclado
 tecnologia
@@ -9441,6 +9655,7 @@ templo
 templário
 tempo
 temporal
+temporário
 temática
 tenda
 tendão
@@ -9469,7 +9684,9 @@ terapêutico
 terceira
 terceirizar
 terceiro
+térmica
 término
+terminar
 terminal
 terminologia
 termo
@@ -9539,6 +9756,8 @@ todos
 tolerante
 tolerar
 tolerância
+tolo
+toldo
 tom
 tomada
 tomar
@@ -9547,6 +9766,8 @@ tombar
 tombo
 tomografia
 tonalidade
+tonel
+tonelada
 tonta
 tonto
 tontura
@@ -9565,6 +9786,7 @@ torneio
 torneira
 tornozelo
 torque
+torrada
 torrar
 torre
 torta
@@ -9598,10 +9820,12 @@ trajetória
 tramar
 tramitar
 tramitação
+trampolim
 trancar
 tranquila
 tranquilidade
 tranquilo
+tranquilizar
 transar
 transação
 transborda
@@ -9610,6 +9834,7 @@ transcendental
 transcendência
 transcrição
 transeunte
+transferir
 transferência
 transformador
 transformar
@@ -9624,6 +9849,7 @@ transmissão
 transmissível
 transparente
 transparência
+transpiração
 transplante
 transportador
 transportar
@@ -9633,6 +9859,8 @@ transtorno
 transversal
 trança
 trapaça
+trapacear
+trapézio
 traseira
 traseiro
 tratamento
@@ -9654,6 +9882,7 @@ treinadora
 treinamento
 treinar
 treino
+trem
 tremer
 tremor
 trevas
@@ -9686,6 +9915,7 @@ trivial
 triângulo
 trocadilho
 trocar
+troco
 troféu
 tromba
 trombone
@@ -9929,6 +10159,7 @@ velha
 velhice
 velho
 velocidade
+velocímetro
 veloz
 veludo
 velório
@@ -9967,6 +10198,7 @@ vergalhão
 vergonha
 vergonhosa
 vergonhoso
+verídico
 verificar
 verificação
 verme
@@ -10009,6 +10241,7 @@ viabilidade
 viabilizar
 viaduto
 viagra
+viajante
 viajar
 viagem
 viajem

@@ -102,6 +102,11 @@
     .game-stats {
         flex-wrap: wrap;
         justify-content: center;
+        display: flex;
+        gap: 20px;
+        background: var(--card);
+        padding: 15px 15px;
+        border-radius: 12px;
     }
 
     /* SIDEBAR vira drawer apenas para actions-card */
