@@ -9,20 +9,16 @@ export function initClassicEvents(elements) {
     const {
         guessForm,
         guessInput,
-        submitBtn,
         hintBtn,
         giveUpBtn,
         guessList,
         progressFill,
         feedbackEl,
-        rankingList,
         newGameBtn,
         connectionsList,
     } = elements;
 
 
-
-    rankingList.innerHTML = "";
     let state = classic.getState();
 
     // CONNECTIONS)
@@ -95,7 +91,7 @@ export function initClassicEvents(elements) {
 
             ui.renderHighlight(elements, result);
 
-            if (result.correct || state.finished) {
+            if (result.success) {
 
                 let connections = [];
                 try {
@@ -212,7 +208,6 @@ export function initClassicEvents(elements) {
             enableInputs();
 
             guessList.innerHTML = "";
-            rankingList.innerHTML = "";
             if (connectionsList) connectionsList.innerHTML = "";
 
             feedbackEl.textContent = "";
@@ -270,14 +265,12 @@ export function initClassicEvents(elements) {
 
     function disableInputs() {
         guessInput.disabled = true;
-        submitBtn.disabled = true;
         hintBtn.disabled = true;
         giveUpBtn.disabled = true;
     }
 
     function enableInputs() {
         guessInput.disabled = false;
-        submitBtn.disabled = false;
         hintBtn.disabled = false;
         giveUpBtn.disabled = false;
     }

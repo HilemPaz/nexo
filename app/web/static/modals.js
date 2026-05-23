@@ -16,7 +16,10 @@ export function openModal(modal) {
     }
 
     modal.classList.add("visible");
+
+    // 🔥 trava scroll
     document.body.style.overflow = "hidden";
+
     activeModal = modal;
 }
 
@@ -24,7 +27,7 @@ export function closeModal(modal, force = false) {
 
     if (!modal) return;
 
-   if (!force && modal.classList.contains("locked-modal")) {
+    if (!force && modal.classList.contains("locked-modal")) {
         return;
     }
 
@@ -32,6 +35,9 @@ export function closeModal(modal, force = false) {
 
     if (activeModal === modal) {
         activeModal = null;
+
+        // 🔥 RESTORE SCROLL (FIX PRINCIPAL)
+        document.body.style.overflow = "";
     }
 }
 
@@ -97,7 +103,6 @@ export function initModals(selectors = {}) {
     closePrivacyModal?.addEventListener("click", () => closeModal(privacyModal));
 
     acceptPrivacyBtn?.addEventListener("click", () => {
-
         localStorage.setItem('privacyAccepted', 'true');
         closeModal(privacyModal);
     });
@@ -111,16 +116,11 @@ export function initModals(selectors = {}) {
     }
 
     closeGiveUpModal?.addEventListener("click", () => closeModal(giveUpModal));
-
     cancelGiveUp?.addEventListener("click", () => closeModal(giveUpModal));
 
     confirmGiveUp?.addEventListener("click", () => {
-
         closeModal(giveUpModal);
-
-        document.dispatchEvent(
-            new CustomEvent("playerGiveUp")
-        );
+        document.dispatchEvent(new CustomEvent("playerGiveUp"));
     });
 
     closeConnectionsModal?.addEventListener("click", () => {
@@ -128,10 +128,7 @@ export function initModals(selectors = {}) {
     });
 
     // ------------------ RESULTADO ------------------
-
     closeResultModal?.addEventListener("click", () => {
         closeModal(resultModal);
     });
-
-
 }

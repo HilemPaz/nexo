@@ -17,10 +17,11 @@ function safeJSON(key, fallback) {
 }
 
 function normalizeAttempt(obj) {
+    if (!obj || !obj.word) return null;
     return {
-        word: ui.normalize(obj?.word ?? "???"),
+        word: ui.normalize(obj?.word),
         rank: obj?.rank ?? 9999,
-        proximity: obj?.proximity ?? "far",
+        proximity: obj?.proximity ?? "very-far",
         correct: obj?.correct ?? false
     };
 }
@@ -79,13 +80,17 @@ export function newGame() {
 export function addAttempt(state, attempt) {
     if (state.finished) return state;
     const normalized = normalizeAttempt(attempt);
+    if (!normalized) return state;
     if (state.attempts.some(a => a.word === normalized.word)) return state;
     const attemptsCount = state.attemptsCount + 1;
+
+    const MAX_ATTEMPTS = 120;
+    const attempts = [...state.attempts, normalized].slice(-MAX_ATTEMPTS);
     const newState = {
         ...state,
-        attempts: [...state.attempts, normalized],
+        attempts,
         attemptsCount,
-        finished: normalized.correct || attemptsCount >= 10
+        finished: normalized.correct
     };
     saveState(newState);
     return newState;
@@ -93,10 +98,14 @@ export function addAttempt(state, attempt) {
 
 export function useHint(state, hint) {
     const normalized = normalizeAttempt(hint);
+    const MAX_ATTEMPTS = 120;
+    const attemptsCount = state.attemptsCount + 1;
+    const attempts = [...state.attempts, normalized].slice(-MAX_ATTEMPTS);
     const newState = {
         ...state,
         hints: state.hints + 1,
-        attempts: [...state.attempts, normalized],
+        attempts,
+        attemptsCount
     };
     saveState(newState);
     return newState;
@@ -168,6 +177,7 @@ export function showResult(state, elements, word) {
         elements.finalWordEl,
         elements.finalAttemptsEl,
         state.attempts,
+        state.attemptsCount,
         word
     );
     

@@ -1,22 +1,34 @@
-# engine/cache.py 
-from app.engine.embeddings import EmbeddingModel
+# engine/cache.py
+
+import numpy as np
+from pathlib import Path
+
+VECTORS_PATH = Path(__file__).parent.parent / "resources" / "vectors.npz"
 
 
 class EmbeddingCache:
     """
-    Cache em memória para embeddings.
-    Cada palavra é convertida em vetor apenas uma vez.
+    Cache em memória para embeddings pré-computados.
+    Carrega todos os vetores uma vez e serve instantaneamente.
     """
 
+    _vectors = None
+
     def __init__(self):
-        self.embedder = EmbeddingModel()
-        self.cache = {}
+        if EmbeddingCache._vectors is None:
+            print("⚡ Carregando vetores pré-computados...")
+
+            data = np.load(VECTORS_PATH, allow_pickle=True)
+
+            # formato: {"palavra": vetor}
+            EmbeddingCache._vectors = data["vectors"].item()
+
+            print(f"✅ {len(EmbeddingCache._vectors)} vetores carregados")
+
+        self.vectors = EmbeddingCache._vectors
 
     def get(self, word: str):
-        """
-        Retorna o embeddings da palavra.
-        Se não existir no cache, calcula e armazena.
-        """
-        if word not in self.cache:
-            self.cache[word] = self.embedder.encode(word)
-        return self.cache[word]
+        try:
+            return self.vectors[word]
+        except KeyError:
+            raise ValueError(f"Embedding não encontrado para '{word}'")

@@ -38,23 +38,32 @@ export function showResult(
     finalWordEl,
     finalAttemptsEl,
     attempts,
+    attemptsCount,
     word
 ) {
 
     if (!resultAreaEl) return;
 
-    const isWinner = attempts?.some(a => a.correct);
+    const isWinner = attempts?.some(a =>
+        a.success === true || a.rank === 1
+    );
 
     titleEl.textContent =
         isWinner
             ? "🎉 Você acertou!"
             : "😢 Você desistiu!";
-
-    if (finalWordEl)
-        finalWordEl.textContent = word ?? "???";
+    let finalWord = word;
+    if (!finalWord || finalWord === "???") {
+        const correctAttempt = attempts?.find(a => a.rank === 1);
+        if (correctAttempt) {
+            finalWord = correctAttempt.word;
+        }
+    }
+     if (finalWordEl)
+        finalWordEl.textContent = finalWord ?? "???";
 
     if (finalAttemptsEl)
-        finalAttemptsEl.textContent = attempts?.length ?? 0;
+        finalAttemptsEl.textContent = attemptsCount ?? attempts?.length ?? 0;
 
     resultAreaEl.classList.remove("hidden");
 }
@@ -78,16 +87,16 @@ export function renderHighlight(elements, guess) {
     highlight.classList.add("pop");
 }
 
-export function updateCounters(elements, state){
+export function updateCounters(elements, state) {
 
-    if(elements.attemptsEl)
+    if (elements.attemptsEl)
         elements.attemptsEl.textContent = state.attemptsCount ?? 0;
 
-    if(elements.hintsEl)
+    if (elements.hintsEl)
         elements.hintsEl.textContent = state.hints ?? 0;
 }
 
-export function showFeedback(el, message, type="error") {
+export function showFeedback(el, message, type = "error") {
 
     if (!el) return;
 

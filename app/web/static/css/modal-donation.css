@@ -5,3 +5,72 @@
 .donation-image-section img {
     max-width: 200px;
 }
+.alternative-support {
+    margin-top: 20px;
+    padding: 18px 16px;
+    border-radius: 12px;
+    background: var(--card-bg, #f8f9fb);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Título */
+.alternative-support h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.alternative-support h3 i {
+    color: #6c5ce7;
+}
+
+/* Texto */
+.alternative-support p {
+    font-size: 0.95rem;
+    color: var(--text-muted, #666);
+    margin-bottom: 12px;
+}
+
+/* Lista */
+.alternative-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Item */
+.alternative-options li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.03);
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+/* Hover suave */
+.alternative-options li:hover {
+    background: rgba(0,0,0,0.06);
+    transform: translateX(3px);
+}
+
+/* Ícones */
+.alternative-options li i {
+    font-size: 0.95rem;
+    color: #6c5ce7;
+    width: 18px;
+    text-align: center;
+}
+
+/* Negrito interno */
+.alternative-options strong {
+    font-weight: 600;
+}
